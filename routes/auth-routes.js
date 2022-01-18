@@ -1,6 +1,6 @@
 import express from 'express'
 const router = express.Router()
-import { check } from 'express-validator'
+
 import {
   authUser,
   registerUser,
@@ -8,7 +8,7 @@ import {
 } from '../controllers/auth-controller.js'
 
 import { validateUser } from '../middleware/validate-user.js'
-import { protect, admin } from '../middleware/auth-middleware.js'
+import { protect } from '../middleware/auth-middleware.js'
 
 router.route('/register', ).post(validateUser, registerUser)
 router.post('/login', authUser)
