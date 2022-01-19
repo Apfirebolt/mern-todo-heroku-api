@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const axiosInstance = axios.create();
 
-axiosInstance.defaults.baseURL = 'http://localhost:5000/';
+// axiosInstance.defaults.baseURL = 'http://localhost:5000/';
 
 // Add a request interceptor
 axiosInstance.interceptors.request.use(function (config) {
