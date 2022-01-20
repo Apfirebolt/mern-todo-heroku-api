@@ -51,9 +51,6 @@ const HeaderComponent = () => {
               <Nav.Link as={ReachLink} to="/register">
                 Register
               </Nav.Link>
-              <Nav.Link as={ReachLink} to="/todos">
-                To Do
-              </Nav.Link>
             </Nav>
           )}
         </Container>

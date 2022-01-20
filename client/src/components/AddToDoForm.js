@@ -1,20 +1,16 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch } from 'react-redux';
 import { Form, Button, Container } from "react-bootstrap";
-import { addToDoAction } from '../actions/toDoActions';
 
-const AddToDoForm = () => {
+const AddToDoForm = (props) => {
   const {
     handleSubmit,
     register,
     formState: { errors },
   } = useForm();
 
-  const dispatch = useDispatch();
-
   const onSubmit = async (values) => {
-    dispatch(addToDoAction({ ...values }));
+    props.addToDo(values);
   };
 
   return (

@@ -58,7 +58,6 @@ export const addToDoAction = (payload) => async (dispatch, getState) => {
 
 export const listToDosAction = () => async (dispatch, getState) => {
   try {
-    console.log('Inside list to do action');
     dispatch({ type: LIST_TODO_REQUEST });
 
     const {
