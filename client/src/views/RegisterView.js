@@ -18,7 +18,7 @@ const RegisterPage = () => {
   };
 
   return (
-    <Container>
+    <Container className="my-4 mx-auto w-50">
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3" controlId="username">
           <Form.Label>Your Username</Form.Label>
