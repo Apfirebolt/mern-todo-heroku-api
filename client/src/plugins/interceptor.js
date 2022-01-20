@@ -2,8 +2,6 @@ import axios from 'axios'
 
 const axiosInstance = axios.create();
 
-// axiosInstance.defaults.baseURL = 'http://localhost:5000/';
-
 // Add a request interceptor
 axiosInstance.interceptors.request.use(function (config) {
     // Do something before request is sent
