@@ -1,21 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Nav, Navbar, Container, Button } from "react-bootstrap";
 import { Link as ReachLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { logout } from "../../actions/authActions";
 
-import ToastComponent from "./Toast";
-
 const HeaderComponent = () => {
   const navigate = useNavigate();
   const userLogin = useSelector((state) => state.userLogin);
-  const { userInfo } = userLogin;
+  const { userInfo, success, loading } = userLogin;
 
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    if (success) {
+      navigate('/todos');
+    }
+  }, [success]);
+
   const logoutFunction = (e) => {
     dispatch(logout());
+    navigate('/login');
   }
 
   return (

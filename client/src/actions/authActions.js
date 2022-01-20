@@ -10,7 +10,6 @@ import {
   USER_DETAILS_RESET,
 } from '../constants/authConstants'
 
-
 export const login = (payload) => async (dispatch) => {
   try {
     dispatch({
@@ -33,7 +32,6 @@ export const login = (payload) => async (dispatch) => {
       type: USER_LOGIN_SUCCESS,
       payload: data,
     })
-
     localStorage.setItem('userInfo', JSON.stringify(data))
   } catch (error) {
     dispatch({
@@ -51,7 +49,6 @@ export const logout = () => (dispatch) => {
     localStorage.removeItem('userInfo')
     dispatch({ type: USER_LOGOUT })
     dispatch({ type: USER_DETAILS_RESET })
-    document.location.href = '/login'
   }, 500)
 }
 
