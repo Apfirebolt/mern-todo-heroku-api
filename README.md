@@ -34,6 +34,16 @@ npm run server
 
 ## Project Screenshots
 
-Screenshots would be added as progress is made with this project.
+Some screenshots of the project are now available which you can checkout below.
+
+![alt text](./screenshots/home.png)
+
+Login Page.
+
+![alt text](./screenshots/login.png)
+
+To do list page with delete modal which opens when you click on an item to delete. These components are powered by react-bootstrap.
+
+![alt text](./screenshots/delete-modal.png)
 
 
