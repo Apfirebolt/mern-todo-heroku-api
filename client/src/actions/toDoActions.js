@@ -1,4 +1,5 @@
 import axiosInstance from "../plugins/interceptor";
+import { toast } from "react-toastify";
 import {
   ADD_TODO_REQUEST,
   ADD_TODO_SUCCESS,
@@ -36,7 +37,7 @@ export const addToDoAction = (payload) => async (dispatch, getState) => {
     };
 
     const { data } = await axiosInstance.post(`/api/todos`, payload, config);
-
+    toast.success("Added new to do");
     dispatch({
       type: ADD_TODO_SUCCESS,
       payload: data,
@@ -106,7 +107,7 @@ export const deleteToDosAction =
         `/api/todos/${todoId}`,
         config
       );
-
+      toast.success("To do successfully deleted");  
       dispatch({
         type: DELETE_TODO_SUCCESS,
         payload: data,

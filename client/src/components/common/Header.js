@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Nav, Navbar, Container, Button } from "react-bootstrap";
 import { Link as ReachLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { logout } from "../../actions/authActions";
+import { toast } from "react-toastify";
 
 const HeaderComponent = () => {
   const navigate = useNavigate();
@@ -14,14 +15,16 @@ const HeaderComponent = () => {
 
   useEffect(() => {
     if (success) {
-      navigate('/todos');
+      toast.success("Logged in successfully!");
+      navigate("/todos");
     }
   }, [success]);
 
   const logoutFunction = (e) => {
+    toast.success("Logged out successfully!");
     dispatch(logout());
-    navigate('/login');
-  }
+    navigate("/login");
+  };
 
   return (
     <>
@@ -36,9 +39,7 @@ const HeaderComponent = () => {
               <Nav.Link as={ReachLink} to="/todos">
                 To Do
               </Nav.Link>
-              <Button onClick={(e) => logoutFunction(e)}>
-                Log Out
-              </Button>
+              <Button onClick={(e) => logoutFunction(e)}>Log Out</Button>
             </Nav>
           ) : (
             <Nav className="me-auto">
